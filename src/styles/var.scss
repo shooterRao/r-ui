@@ -1,0 +1,74 @@
+$prefix: 'r-';
+
+// color
+$primary-color: #1EA7FD !default;
+
+$primary-light-color: mix($primary-color, #fff, 30%) !default;
+$primary-dark-color: mix($primary-color, #fff, 30%) !default;
+$link-color: $primary-color !default;
+$link-hover-color: mix($link-color, #000, 80%) !default;
+
+// 辅助色
+$info-color : #3B91FF; //info
+$success-color : #13CE66; //success
+$warn-color : #FFAE00; //warn
+$error-color : #E11617; //error
+
+$white-color: #ffffff;
+
+
+$dark-color: #333333;
+$dark1-color: #666666;
+$dark2-color: #999999;
+
+$gray-color: #cccccc;
+$gray1-color: #eeeeee;
+$gray2-color: #f3f3f3;
+
+$transition-time: 0.2s;
+
+$transition-default: $transition-time linear;
+
+$font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+$font-size: 14px;
+$font-size-small: 12px;
+$font-size-large: 16px;
+$line-height: 1.5;
+$text-color: $dark-color;
+$body-background: #F6F6F6;
+
+$border-radius-base: 6px;
+$border-radius-small: 3px;
+$border-radius-large: 50px;
+
+//border
+$border-color: $gray2-color;
+$border: 1px solid $gray2-color;
+
+// button 变量
+$btn-border-radius: 4px;
+
+// 大小
+$btn-size-padding: 8px 15px;
+$btn-size-padding-l: 10px 20px;
+$btn-size-padding-s: 5px 10px;
+$btn-size-padding-circle: 12px;
+
+// 文字大小
+$btn-fs: 14px;
+$btn-fs-l: 16px;
+$btn-fs-s: 12px;
+
+// 默认
+$btn-default-bg: $white-color;
+$btn-default-color: $text-color;
+$btn-default-border: $gray1-color;
+
+// disabled
+$btn-disabled-cursor: not-allowed;
+$btn-disabled-color: $dark2-color;
+$btn-disabled-border-color: $gray-color;
+$btn-disabled-background-color: $gray2-color;
+
+

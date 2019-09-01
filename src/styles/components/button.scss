@@ -1,0 +1,149 @@
+$button-prefix: '#{$prefix}button';
+
+@mixin btn-color($color, $default: false) {
+  @if ($default) {
+    background-color: $btn-default-bg;
+    border-color: $btn-default-border;
+    &:hover {
+      border-color: lighten($color, 10%);
+      color: lighten($color, 10%);
+    }
+    &:active {
+      border-color: darken($color, 8%);
+      color: darken($color, 8%);
+    }
+  } @else {
+    background-color: $color;
+    border-color: $color;
+    color: $white-color;
+    &:hover {
+      background-color: lighten($color, 10%);
+      border-color: lighten($color, 10%);
+    }
+    &:active {
+      background-color: darken($color, 8%);
+      border-color: darken($color, 8%);
+    }
+  }
+}
+
+@mixin btn-hollow-color($color, $default: true) {
+  @if ($default) {
+    border-color: $color;
+    color: $color;
+  }
+  &:hover {
+    border-color: lighten($color, 10%);
+    color: lighten($color, 10%);
+  }
+  &:active {
+    border-color: darken($color, 8%);
+    color: darken($color, 8%);
+  }
+}
+
+.#{$button-prefix} {
+  display: inline-block;
+  text-align: center;
+  touch-action: manipulation;
+  line-height: 1;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  outline: none;
+  border-radius: $btn-border-radius;
+  border: 1px solid transparent;
+  transition: $transition-default;
+  font-size: $btn-fs;
+  padding: $btn-size-padding;
+  @include btn-hollow-color($primary-color, false);
+  &.#{$button-prefix} {
+    &-large {
+      font-size: $btn-fs-l;
+      padding: $btn-size-padding-l;
+    }
+    &-small {
+      font-size: $btn-fs-s;
+      padding: $btn-size-padding-s;
+    }
+    &-default {
+      @include btn-color($primary-color, true);
+    }
+    &-primary {
+      @include btn-color($primary-color);
+    }
+    &-success {
+      @include btn-color($success-color);
+    }
+    &-warn {
+      @include btn-color($warn-color);
+    }
+    &-error {
+      @include btn-color($error-color);
+    }
+    &-dark {
+      @include btn-color($dark-color);
+    }
+    &-text {
+      border: none;
+      background: transparent;
+    }
+    &-hollow {
+      &-primary {
+        @include btn-hollow-color($primary-color);
+      }
+      &-success {
+        @include btn-hollow-color($success-color);
+      }
+      &-warn {
+        @include btn-hollow-color($warn-color);
+      }
+      &-error {
+        @include btn-hollow-color($error-color);
+      }
+      &-dark {
+        @include btn-hollow-color($dark-color);
+      }
+    }
+    &.circle {
+      padding: $btn-size-padding-circle;
+      border-radius: 50%;
+    }
+    &[disabled] {
+      cursor: $btn-disabled-cursor;
+      color: $btn-disabled-color;
+      border-color: $btn-disabled-border-color;
+      background-color: $btn-disabled-background-color;
+      &.#{$button-prefix}-text {
+        border-color: transparent;
+        background-color: transparent;
+      }
+    }
+    &.loading {
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    &.custom {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    // &:focus {
+    //   box-shadow: 0 0 0 2px lighten($primary-color, 20%);
+    // }
+  }
+
+  > i {
+    + span {
+      margin-left: 3px;
+    }
+  }
+
+  > span {
+    > i {
+      margin-left: 3px;
+    }
+  }
+}
