@@ -7,9 +7,7 @@
     @click="handleClick"
   >
     <r-icon v-if="iconName" :name="iconName" />
-    <template v-if="loading">
-      <r-icon name="loading" />
-    </template>
+    <r-icon name="loading" v-if="loading" />
     <span v-if="showText">
       <slot></slot>
     </span>
@@ -17,10 +15,15 @@
 </template>
 
 <script>
+import Icon from '../icon'
+
 const prefixCls = 'r-button'
 
 export default {
   name: 'r-button',
+  components: {
+    'r-icon': Icon
+  },
   props: {
     // 大小
     // large、small
@@ -54,6 +57,7 @@ export default {
       type: Boolean,
       default: false
     },
+    // 是否采用自定义颜色
     custom: {
       type: Boolean,
       default: false
@@ -66,6 +70,7 @@ export default {
     fontColor: {
       type: String
     },
+    // 图标名
     iconName: {
       type: String
     }

@@ -1,11 +1,6 @@
 <template>
-  <i>
-    <svg
-      :style="svgColor"
-      fill="currentColor"
-      :class="svgClass"
-      aria-hidden="true"
-    >
+  <i :class="['r-icon', `r-icon-${name}`, className]" :style="svgStyle">
+    <svg fill="currentColor" aria-hidden="true" width="1em" height="1em">
       <!-- prettier-ignore -->
       <use :xlink:href="iconName" />
     </svg>
@@ -28,6 +23,9 @@ export default {
     // 颜色
     color: {
       type: String
+    },
+    size: {
+      type: Number
     }
   },
   computed: {
@@ -36,17 +34,16 @@ export default {
     },
     svgClass() {
       if (this.className) {
-        return `r-icon ${this.className}`
-      }
-      return 'r-icon'
-    },
-    svgColor() {
-      if (this.color) {
-        return {
-          color: this.color
-        }
+        return `${this.className}`
       }
       return ''
+    },
+    svgStyle() {
+      const { color, size } = this
+      const style = {}
+      color && (style.color = color)
+      size && (style.fontSize = `${size}px`)
+      return style
     }
   }
 }

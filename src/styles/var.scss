@@ -38,6 +38,8 @@ $line-height: 1.5;
 $text-color: $dark-color;
 $body-background: #F6F6F6;
 
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+
 $border-radius-base: 6px;
 $border-radius-small: 3px;
 $border-radius-large: 50px;
@@ -46,7 +48,7 @@ $border-radius-large: 50px;
 $border-color: $gray2-color;
 $border: 1px solid $gray2-color;
 
-// button 变量
+/*  button 变量  */
 $btn-border-radius: 4px;
 
 // 大小
@@ -72,3 +74,6 @@ $btn-disabled-border-color: $gray-color;
 $btn-disabled-background-color: $gray2-color;
 
 
+/*  message 变量  */
+$message-padding: 8px 16px;
+$message-bg: $white-color;

@@ -5,12 +5,15 @@ import '@/styles/index.scss'
 
 import Button from './button'
 import Icon from './icon'
+import Message from './message'
 
 export const install = Vue => {
   if (install.installed) return
   install.installed = true
   Vue.component(Button.name, Button)
   Vue.component(Icon.name, Icon)
+
+  Vue.prototype.$message = Message
 }
 
 // auto install
