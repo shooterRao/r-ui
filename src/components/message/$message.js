@@ -8,7 +8,7 @@ let ins
 let i = 1 // 标识使用了多少次
 let zIndex = 2000
 
-const TYPES = ['info', 'success', 'warn', 'error']
+const TYPES = ['info', 'success', 'warn', 'error', 'loading']
 
 const Message = function Message(opts = {}) {
   if (typeof opts === 'string') {

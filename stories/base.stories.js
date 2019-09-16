@@ -164,6 +164,15 @@ storiesOf('基础', module)
       error() {
         this.$message.error('落地成盒！')
       },
+      loading() {
+        const load = this.$message.loading({
+          message: '正在处理',
+          duration: 0
+        })
+        setTimeout(() => {
+          load.close()
+        }, 2000)
+      },
       closeabled() {
         this.$message({
           message: '手动关闭',
@@ -194,6 +203,7 @@ storiesOf('基础', module)
           <r-button type="error" onclick={this.error}>
             错误通知
           </r-button>
+          <r-button onclick={this.loading}>loading</r-button>
           <h2>手动关闭</h2>
           <r-button onclick={this.closeabled}>
             手动关闭
